@@ -1,0 +1,607 @@
+body {
+  /* display: block; */
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+
+  /* Фон страницы */
+  background: url(../images/fon.jpg);
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  width: 100%;
+  padding-bottom: 20px;
+  background-color: rgba(42, 116, 212, 0.9);
+}
+@media (max-width: 850px) {
+  .header {
+    background-color: rgba(42, 116, 212, 0);
+  }
+}
+#menu__toggle {
+  opacity: 0;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav__item {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+@media (max-width: 1000px) {
+  .nav__item {
+    font-size: 15px;
+  }
+}
+.nav__item:hover {
+  color: #fff;
+  transition-duration: 0.25s;
+}
+@media (max-width: 850px) {
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .nav {
+    visibility: visible;
+    left: 0;
+  }
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    opacity: 1;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition-duration: 0.25s;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+  .nav {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    /* height: 100%; */
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #eceff1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.25s;
+  }
+  .nav__item {
+    display: block;
+    padding: 12px 24px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: 0.25s;
+  }
+  .nav__item:hover {
+    background-color: #178fc7;
+  }
+}
+/* Btn */
+.btn__one {
+  border-radius: 20px;
+  color: #000;
+  font-weight: 700;
+  opacity: 0.75;
+  padding: 8px 16px;
+  margin-right: 30px;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  text-transform: uppercase;
+  transition: background-color 0.2s linear, border 0.2s linear,
+    color 0.2s linear;
+}
+.btn__one {
+  background-color: rgb(30, 219, 219);
+  border: 1px solid rgb(30, 219, 219);
+}
+.btn__one:hover {
+  background-color: rgb(28, 122, 122);
+  border: 1px solid rgb(28, 122, 122);
+  color: #fff;
+  opacity: 1;
+}
+.btn__two {
+  border-radius: 20px;
+  color: #000;
+  font-weight: 700;
+  padding: 8px 16px;
+  opacity: 0.75;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  text-transform: uppercase;
+  transition: background-color 0.2s linear, border 0.2s linear,
+    color 0.2s linear;
+}
+.btn__two {
+  background-color: rgb(56, 207, 124);
+  border: 1px solid rgb(56, 207, 124);
+}
+.btn__two:hover {
+  background-color: rgb(33, 131, 77);
+  border: 1px solid rgb(33, 131, 77);
+  color: #fff;
+  opacity: 1;
+}
+/* /Header */
+
+/* Home */
+.home {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  background: linear-gradient(rgba(12, 150, 130, 0.8), rgba(10, 140, 120, 0.8));
+}
+@media (max-width: 1000px) {
+  .home {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.home__content {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 850px) {
+  .home__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.home__img {
+  width: 100%;
+}
+@media (max-width: 850px) {
+  .home__img {
+    width: 80%;
+  }
+}
+.home__img img {
+  width: 100%;
+}
+.home__inner {
+  text-align: center;
+  padding: 0 10px;
+}
+.home__title {
+  font-size: 50px;
+  font-weight: 700;
+}
+@media (max-width: 1000px) {
+  .home__title {
+    font-size: 30px;
+  }
+}
+@media (max-width: 850px) {
+  .home__title {
+    margin-top: 10px;
+  }
+}
+.home__text {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+.home__time h1 {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: italic;
+  color: #de0000;
+}
+.home__time p {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #2c00de;
+}
+@media (max-width: 850px) {
+  .home__time h1,
+  .home__time p {
+    font-size: 20px;
+  }
+}
+/* /Home */
+
+/* About */
+.about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(rgba(0, 125, 107, 0.8), rgba(10, 140, 120, 0.8));
+}
+@media (max-width: 1000px) {
+  .about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.about__title {
+  padding-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 850px) {
+  .about__title {
+    font-size: 30px;
+  }
+}
+.about__content {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 850px) {
+  .about__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.about__inner {
+  text-align: center;
+}
+.about__subtitle {
+  font-size: 50px;
+  font-weight: 700;
+}
+@media (max-width: 1000px) {
+  .about__subtitle {
+    font-size: 30px;
+  }
+}
+.about__text {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+.about__img {
+  width: 50%;
+}
+/* /About */
+
+/* Tokenomics */
+.tokenomics {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(rgba(30, 156, 138, 0.8), rgba(10, 140, 120, 0.8));
+}
+@media (max-width: 1000px) {
+  .tokenomics {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.tokenomics__title {
+  padding-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 850px) {
+  .tokenomics__title {
+    font-size: 30px;
+  }
+}
+.tokenomics__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 850px) {
+  .tokenomics__content {
+    justify-content: space-around;
+  }
+}
+.tokenomics__left {
+  text-align: left;
+}
+.tokenomics__influencers h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__influencers h3 {
+    font-size: 20px;
+  }
+}
+.tokenomics__influencers p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+.tokenomics__influencers img {
+  margin-bottom: 15px;
+  max-width: 160px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__influencers img {
+    max-width: 100px;
+  }
+}
+.tokenomics__team h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__team h3 {
+    font-size: 20px;
+  }
+}
+.tokenomics__team p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+.tokenomics__team img {
+  margin-bottom: 15px;
+  max-width: 160px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__team img {
+    max-width: 100px;
+  }
+}
+.tokenomics__img {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 850px) {
+  .tokenomics__img img {
+    display: none;
+  }
+}
+.tokenomics__img img {
+  width: 80%;
+}
+.tokenomics__right {
+  text-align: right;
+}
+.tokenomics__holders h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__holders h3 {
+    font-size: 20px;
+  }
+}
+.tokenomics__holders p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+.tokenomics__holders img {
+  margin-bottom: 15px;
+  max-width: 160px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__holders img {
+    max-width: 100px;
+  }
+}
+.tokenomics__liquidity h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__liquidity h3 {
+    font-size: 20px;
+  }
+}
+.tokenomics__liquidity p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+.tokenomics__liquidity img {
+  margin-bottom: 15px;
+  max-width: 160px;
+}
+@media (max-width: 1000px) {
+  .tokenomics__liquidity img {
+    max-width: 100px;
+  }
+}
+/* /Tokenomics */
+
+/* Roadmap */
+.roadmap {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(rgba(14, 175, 151, 0.8), rgba(10, 140, 120, 0.8));
+}
+@media (max-width: 1000px) {
+  .roadmap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+.roadmap__title {
+  padding-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 850px) {
+  .roadmap__title {
+    font-size: 30px;
+  }
+}
+.roadmap__content {
+  display: flex;
+  justify-content: space-between;
+}
+.roadmap__left {
+  width: 50%;
+}
+@media (max-width: 850px) {
+  .roadmap__left {
+    display: none;
+    width: 0;
+  }
+}
+.roadmap__img {
+  width: 100%;
+}
+.roadmap__block img {
+  width: 100%;
+  max-width: 50px;
+}
+.roadmap__right {
+  width: 65%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-content: space-between;
+  margin-left: -150px;
+}
+@media (max-width: 850px) {
+  .roadmap__right {
+    width: 100%;
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+.roadmap__block {
+  width: 33.3333%;
+  word-break: break-word;
+  padding: 0 5px;
+  text-align: center;
+}
+@media (max-width: 850px) {
+  .roadmap__block {
+    padding: 0 5px 10px;
+  }
+}
+.roadmap__block img {
+  margin-bottom: 10px;
+}
+.roadmap__block h3 {
+  margin-bottom: 10px;
+}
+.roadmap__block p {
+  font-size: 13px;
+}
+/* /Roadmap */
+
+/* Community */
+.community {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(rgba(10, 183, 159, 0.8), rgba(10, 140, 120, 0.8));
+}
+@media (max-width: 1000px) {
+  .community {
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+}
+.community__title {
+  padding-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 850px) {
+  .community__title {
+    font-size: 30px;
+  }
+}
+.social__block {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  .social__block {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 700px) {
+  .social__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.social {
+  display: flex;
+}
+@media (max-width: 700px) {
+  .social {
+    padding: 0 5px 10px;
+  }
+}
+.social__link {
+  padding: 0 30px;
+  transition: transform 0.5s linear;
+}
+.social__link img {
+  width: 100%;
+  max-width: 70px;
+}
+@media (max-width: 1000px) {
+  .social__link img {
+    max-width: 50px;
+  }
+}
+.social__link img:hover {
+  transform: translateY(-5px);
+}
+/* /Community */
