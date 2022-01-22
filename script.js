@@ -17,7 +17,7 @@ for (let anchor of anchors) {
 
 // Обратный отсчет =============================================================
 // Время обратного отсчета (В new Date("Месяц число (29), 2021 21:55:00") вводим необходимую дату)
-var countDownDate = new Date("Aug 30, 2021 21:55:00").getTime();
+var countDownDate = new Date("Aug 30, 2025 21:55:00").getTime();
 
 // Обновление таймера (каждую секунду)
 var countDownFunction = setInterval(function () {
